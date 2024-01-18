@@ -1,0 +1,14 @@
+#Database Connection Setting
+spring:
+  main:
+    allow-circular-references: true
+  datasource:
+    url: ${STUDENT_DATASOURCE_URL:jdbc:postgresql://localhost:5432/student}
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:root}
+    driver-class-name: org.postgresql.Driver
+    jpa:
+      hibernate:
+        naming:
+          physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+        ddl-auto: create

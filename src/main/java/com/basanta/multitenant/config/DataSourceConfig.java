@@ -7,7 +7,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table("data_source_config")
+@Table(name = "data_source_config")
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Getter
@@ -19,22 +19,22 @@ public class DataSourceConfig {
     @SequenceGenerator(name = "data_source_config_seq_gen", sequenceName = "data_source_config_seq", allocationSize = 1)
     private Integer id;
 
-    @Column("name")
+    @Column(name = "name")
     private String name;
 
-    @Column("tenant_url")
+    @Column(name = "tenant_url")
     private String tenantUrl;
 
-    @Column("tenant_username")
+    @Column(name = "tenant_username")
     private String username;
 
-    @Column("tenant_password")
+    @Column(name = "tenant_password")
     private String password;
 
 
-    @Column("driver_class_name")
+    @Column(name = "driver_class_name")
     private String driverClassName;
 
-    @Column("initialize")
+    @Column(name = "initialize")
     private boolean initialize;
 }

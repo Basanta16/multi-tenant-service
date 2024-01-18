@@ -1,7 +1,7 @@
 package com.basanta.multitenant.controller;
 
 
-import com.basanta.multitenant.entity.Student;
+import com.basanta.multitenant.exception.AppException;
 import com.basanta.multitenant.pojo.StudentPojo;
 import com.basanta.multitenant.response.GlobalApiResponse;
 import com.basanta.multitenant.service.StudentService;
@@ -23,7 +23,7 @@ public class StudentController extends BaseController {
     }
 
     @GetMapping("/{id}")
-    public GlobalApiResponse getStudent(@PathVariable("id") Integer id) throws Exception {
+    public GlobalApiResponse getStudent(@PathVariable("id") Integer id) throws AppException {
         return successResponse(customMessageSource
                 .get("get succesfullly"), studentService.getStudentById(id));
     }

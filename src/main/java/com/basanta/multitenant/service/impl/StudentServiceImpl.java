@@ -1,6 +1,7 @@
 package com.basanta.multitenant.service.impl;
 
 import com.basanta.multitenant.entity.Student;
+import com.basanta.multitenant.exception.AppException;
 import com.basanta.multitenant.pojo.StudentPojo;
 import com.basanta.multitenant.repo.StudentRepository;
 import com.basanta.multitenant.service.StudentService;
@@ -26,9 +27,9 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public StudentPojo getStudentById(Integer id) throws Exception {
+    public StudentPojo getStudentById(Integer id) throws AppException {
         Student student = studentRepository.findById(id)
-                .orElseThrow(() -> new Exception("Id not found"));
+                .orElseThrow(() -> new AppException("Id not found"));
         return StudentPojo.builder()
                 .id(student.getId())
                 .studentName(student.getStudentName())

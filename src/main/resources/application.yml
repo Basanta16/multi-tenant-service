@@ -3,9 +3,9 @@ spring:
   main:
     allow-circular-references: true
   datasource:
-    url: ${STUDENT_DATASOURCE_URL:jdbc:postgresql://localhost:5432/student}
-    username: ${DB_USERNAME:postgres}
-    password: ${DB_PASSWORD:root}
+    url: jdbc:postgresql://localhost:5432/student
+    username: postgres
+    password: root
     driver-class-name: org.postgresql.Driver
     jpa:
       hibernate:
